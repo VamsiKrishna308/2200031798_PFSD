@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div  align="center" class="col">
+        <br> <br>
+<form method="post" action="{% url 'pie_chart' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Generate Graph</button>
+</form>
+    </div>
+      <div  align="center" class="col">
+          <br><br>
+          <img src="{{ graph_path }}" alt="Pie Chart">
+      </div></div>
+</div>
+{% endblock %}
+</html>
+
